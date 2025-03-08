@@ -1,0 +1,15 @@
+<configuration>
+    <!-- Define o formato e o nível do log no console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{HH:mm:ss}] [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Configura os níveis de log -->
+    <logger name="com.ecodev.crawler" level="info"/>
+
+    <root level="debug">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

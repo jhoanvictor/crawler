@@ -12,15 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@Deprecated
 public class NoticiaScraperMultiSite {
 
-    // Mapeia cada site com seu seletor de manchetes
     private static final Map<String, String> SITES_OLD = Map.of(
             "https://g1.globo.com/", "a.feed-post-link",
             "https://www.folha.uol.com.br/", "block__news__thumb",
             "https://www.estadao.com.br/", "li.bullet"
     );
-    //https://www.infomoney.com.br/
 
     private static final Map<String, String> SITES = Map.of(
             "https://www.cnnbrasil.com.br/", "li.block__news__item"

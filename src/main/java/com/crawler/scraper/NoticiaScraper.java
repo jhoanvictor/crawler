@@ -24,8 +24,8 @@ public class NoticiaScraper {
             for (Element elemento : elementos) {
 
                 String titulo = elemento.text();
-                String link = elemento.absUrl("href"); // Obtém o link absoluto
-                LocalDate dataPublicacao = LocalDate.now(); // Simplesmente define a data como hoje (pode melhorar depois)
+                String link = elemento.absUrl("href");
+                LocalDate dataPublicacao = LocalDate.now();
 
                 noticias.add(new Noticia(titulo, link, dataPublicacao));
             }

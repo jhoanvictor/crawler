@@ -8,7 +8,7 @@
 
     <!-- Salvar log em arquivo -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logs/scraper.log</file>
+        <file>crawler/logs/scraper.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- Gera um novo arquivo de log por dia -->
             <fileNamePattern>logs/scraper-%d{yyyy-MM-dd}.log</fileNamePattern>

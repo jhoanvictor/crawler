@@ -59,18 +59,28 @@
         </configuration>
       </plugin>
 
+      <!-- Desativa a criação do JAR padrão -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <id>default-jar</id>
+            <phase>none</phase>  <!-- Isso impede o Maven de criar o JAR padrão -->
+          </execution>
+        </executions>
+      </plugin>
+
       <!-- Plugin para empacotar um JAR executável -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>3.4.0</version>
         <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>com.seuprojeto.ScraperMain</mainClass>
+              <mainClass>com.crawler.Main</mainClass>
             </manifest>
           </archive>
         </configuration>

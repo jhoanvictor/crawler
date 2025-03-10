@@ -6,10 +6,24 @@
         </encoder>
     </appender>
 
+    <!-- Salvar log em arquivo -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/scraper.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Gera um novo arquivo de log por dia -->
+            <fileNamePattern>logs/scraper-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory> <!-- Mantém logs dos últimos 7 dias -->
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%d{HH:mm:ss}] [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
     <!-- Configura os níveis de log -->
     <logger name="com.ecodev.crawler" level="info"/>
 
-    <root level="debug">
+    <root level="info">
         <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE" />
     </root>
 </configuration>

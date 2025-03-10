@@ -18,21 +18,10 @@ import static org.mockito.Mockito.*;
 class NoticiaScraperTest {
 
     private NoticiaScraper scraper;
-    private Document mockDocument;
 
     @BeforeEach
     void setUp() {
         scraper = new NoticiaScraper();
-        mockDocument = Jsoup.parse("<html>" +
-                "<body>" +
-                "<div class='news'>" +
-                "<a class='title' href='https://example.com/news1'>Notícia 1</a>" +
-                "</div>" +
-                "<div class='news'>" +
-                "<a class='title' href='https://example.com/news2'>Notícia 2</a>" +
-                "</div>" +
-                "</body>" +
-                "</html>");
     }
 
     @Test
